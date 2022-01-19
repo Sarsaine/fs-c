@@ -1,0 +1,38 @@
+{
+    "version": 1,
+    "default": {
+        "from": [],
+        "tags": {
+            "latest": {
+                "arguments": {
+                    "FROM_TAG": "latest"
+                }
+            }
+        },
+        "arguments": {
+            "FROM_TAG": "latest"
+        },
+        "volumes": [
+            "$PWD:/app:z"
+        ],
+        "ports": [],
+        "interactive": false,
+        "detached": false,
+        "match_ids": true,
+        "workdir": "/app"
+    },
+    "commands": {
+        "fsmake": {
+            "command": "make",
+            "enabled": true
+        },
+        "fsrun": {
+            "command": "",
+            "enabled": true
+        },
+        "fsvalgrind": {
+            "command": "valgrind",
+            "enabled": true
+        }
+    }
+}

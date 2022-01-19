@@ -1,0 +1,13 @@
+ARG FROM_TAG=latest
+FROM fedora:${FROM_TAG}
+
+RUN dnf clean all && dnf update -y
+
+RUN dnf install -y make clang valgrind
+
+RUN useradd user
+RUN mkdir /app
+RUN chown user:user /app
+WORKDIR /app
+
+USER user
